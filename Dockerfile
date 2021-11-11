@@ -1,7 +1,5 @@
 # pull official base image
-FROM node:alpine
-RUN export NODE_OPTIONS=--openssl-legacy-provider
-
+FROM node:16
 
 # set working directory
 WORKDIR /app
