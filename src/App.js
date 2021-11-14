@@ -1,7 +1,5 @@
 // App.js
 // Modified by: Alex Mei
-
-// eslint-disable-next-line
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes ,Route } from 'react-router-dom';
 
@@ -30,7 +28,7 @@ function App() {
   return (
     <main>
       <BrowserRouter>
-        <Routes>
+        <Routes> 
           <Route path="/" exact element = {<DefaultHomePage/>}/> 
           <Route path="/summary" exact element = {<SummaryPage/>}/> 
           <Route path="/error" exact element = {<ErrorPage/>}/> 
