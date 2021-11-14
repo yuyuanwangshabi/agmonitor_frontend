@@ -1,7 +1,15 @@
-import logo from './logo.svg';
+// App.js
+// Modified by: Alex Mei
+
+// eslint-disable-next-line
+import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
-import React, { useEffect, useState } from "react";
+
+import DefaultHomePage from './components/pages/DefaultHomePage';
+import SummaryPage from './components/pages/SummaryPage';
+import ErrorPage from './components/pages/ErrorPage';
 
 const url = 'http://localhost:8000/';
 function App() {
@@ -19,22 +27,20 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reloads. {temp}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Switch>
+        <Route path="/" exact>
+          <DefaultHomePage/>
+        </Route>
+        <Route path="/summary">
+          <SummaryPage/>
+        </Route>
+
+        <Route>
+          <ErrorPage />
+        </Route>
+      </Switch>
+    </main>
   );
 }
 
