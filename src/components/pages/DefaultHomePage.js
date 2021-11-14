@@ -2,14 +2,13 @@
 // Engineer: Alex Mei
 
 import React from 'react';
+import Navbar from "../NavBar/Navbar"
 
 function DefaultHomePage (props) {
 
     return (
-        <div>
-            <div className="container">
-                <h1 className="text"> Default Home Page </h1>
-            </div>
+        <div>   
+            <Navbar />
         </div>
     );
 };
