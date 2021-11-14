@@ -4,13 +4,13 @@
 import React from 'react';
 import Navbar from "../NavBar/Navbar"
 
-function DefaultHomePage (props) {
+function HomePage (props) {
 
     return (
         <div>   
-            <Navbar />
+            <Navbar /> Home Page
         </div>
     );
 };
 
-export default DefaultHomePage;
+export default HomePage;
