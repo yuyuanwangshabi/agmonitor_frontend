@@ -3,7 +3,8 @@
 
 // eslint-disable-next-line
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes ,Route } from 'react-router-dom';
+
 import './App.css';
 import axios from 'axios';
 
@@ -28,18 +29,13 @@ function App() {
 
   return (
     <main>
-      <Switch>
-        <Route path="/" exact>
-          <DefaultHomePage/>
-        </Route>
-        <Route path="/summary">
-          <SummaryPage/>
-        </Route>
-
-        <Route>
-          <ErrorPage />
-        </Route>
-      </Switch>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element = {<DefaultHomePage/>}/> 
+          <Route path="/summary" exact element = {<SummaryPage/>}/> 
+          <Route path="/error" exact element = {<ErrorPage/>}/> 
+        </Routes>
+      </BrowserRouter>
     </main>
   );
 }
